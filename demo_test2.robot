@@ -1,9 +1,9 @@
 *** Settings ***
-Library           lib/my_demo.py
+Library           lib/DemoLibrary.py
 
 *** Test Cases ***
-mytest1
+test1
     [Tags]    taozs
     init system
-    Create User    taozs    11
+    create user    taozs    11
     user should be exit    taozs

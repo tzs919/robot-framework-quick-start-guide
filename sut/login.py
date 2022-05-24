@@ -127,7 +127,6 @@ def help():
 if __name__ == '__main__':
     actions = {'create': create_user, 'login': login,
                'change-password': change_password, 'help': help}
-    print(sys.argv[0])
     try:
         action = sys.argv[1]
     except IndexError:

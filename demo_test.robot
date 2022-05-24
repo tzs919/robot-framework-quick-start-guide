@@ -1,26 +1,24 @@
 *** Settings ***
 Documentation       Suite description
 Library             OperatingSystem
-Library             lib/my_demo.py
-Suite Setup         my suite setup
-Test Setup          my test setup
+Library             lib/DemoLibrary.py
+Suite Setup         setup suite
+Test Setup          setup test case
 
 *** Variables ***
 ${myfile}         xyz
 
 *** Test Cases ***
-Test my house
-#    [Tags]    DEBUG
-    init system
-    init system2
-
-Test my house2
+TestCase1
     [Tags]    DEBUG
-    init system2
-    ${file conten} =    get file    readme.txt
+    init system
+
+TestCase2
+    [Tags]    DEBUG
+    ${file conten} =    get file    demo.txt
     print file content  ${file conten}
 
-This is my third testcase
+TestCase3
     [Template]  creating user with invalid password should fail
     tao1    18
     tao2    19
@@ -29,12 +27,5 @@ This is my third testcase
 *** Keywords ***
 Creating User with invalid password should fail
     [Arguments]    ${usename}    ${age}
-    create User    ${usename}    ${age}
+    create user    ${usename}    ${age}
     user should be exit     taozs
-    init system2
-
-my suite setup
-    setup suite
-
-my test setup
-    setup case
