@@ -134,6 +134,8 @@ report.html
 report/
 .idea/
 
+results/
+
 tmp
 build
 dist
